@@ -50,7 +50,26 @@ namespace Words.Models
     public static string MakeNumeronym(string input)
     {
       string result = "";
+      if (input.Length % 3 == 2)
+      {
+        if (input.Length == 2)
+        {
+          result += GetTeens(input);
+        }
+      }
+      else if (input.Length == 1)
+      {
+        result += GetOnes(input);
+      }
+      else
+      {
+        result = "error";
+      }
 
+      // else if ()
+      // {
+
+      // }
 
       return result;
     }

@@ -25,10 +25,17 @@ namespace Words.Tests
     }
 
     [TestMethod]
-    public void MakeNumeronym_returnBigWord_string()
+    public void MakeNumeronym_returnTeen_string()
     {
-      string input = "1000";
-      Assert.AreEqual("One Thounsand", Numeronym.MakeNumeronym(input));
+      string input = "14";
+      Assert.AreEqual("Fourteen", Numeronym.MakeNumeronym(input));
+    }
+
+    [TestMethod]
+    public void MakeNumeronym_returnOnes_string()
+    {
+      string input = "4";
+      Assert.AreEqual("Four", Numeronym.MakeNumeronym(input));
     }
 
   }
