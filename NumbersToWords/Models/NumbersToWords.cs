@@ -50,21 +50,37 @@ namespace Words.Models
     public static string MakeNumeronym(string input)
     {
       string result = "";
-      if (input.Length % 3 == 2)
+      // int remaining = 0;
+
+      for (int i = 0; i < input.Length; i++)
       {
-        if (input.Length == 2)
+
+
+        if (i == 1 && input[i - 1] == '1')
         {
-          result += GetTeens(input);
+          result += GetTeens(input[i]);
+        }
+        else if (i == 1 && input[i - 1] != '0')
+        {
+          result += GetDeca(input[i - 1]);
+        }
+        else if (i == 0 && input[i] != '0')
+        {
+          result += GetOnes(input[i]);
+        }
+        // else if (i == 2 && input[i] != '0')
+        // {
+        //   result += GetOnes(input);
+        // }
+        else
+        {
+          result = "error";
         }
       }
-      else if (input.Length == 1)
-      {
-        result += GetOnes(input);
-      }
-      else
-      {
-        result = "error";
-      }
+
+
+
+
 
       // else if ()
       // {
@@ -75,20 +91,20 @@ namespace Words.Models
     }
 
     //Change the name of the method.
-    public static string GetOnes(string number)
+    public static string GetOnes(char number)
     {
-      string result = Ones[number];
+      string result = Ones[number.ToString()];
       return result;
     }
-    public static string GetTeens(string number)
+    public static string GetTeens(char number)
     {
-      char lastDigit = number[number.Length - 1];
+      char lastDigit = number;
       string result = Teens[lastDigit.ToString()];
       return result;
     }
-    public static string GetDeca(string number)
+    public static string GetDeca(char number)
     {
-      char decaDigit = number[number.Length - 2];
+      char decaDigit = number;
       string result = Deca[decaDigit.ToString()];
       return result;
     }

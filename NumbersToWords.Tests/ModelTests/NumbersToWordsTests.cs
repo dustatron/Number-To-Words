@@ -11,17 +11,17 @@ namespace Words.Tests
     [TestMethod]
     public void GetOnes_returnsOnesAsWord_string()
     {
-      Assert.AreEqual("One", Numeronym.GetOnes("1"));
+      Assert.AreEqual("One", Numeronym.GetOnes('1'));
     }
     [TestMethod]
     public void GetTeens_returnsTensAsWord_string()
     {
-      Assert.AreEqual("Twelve", Numeronym.GetTeens("12"));
+      Assert.AreEqual("Twelve", Numeronym.GetTeens('2'));
     }
     [TestMethod]
     public void GetDeca_returnsDecasAsWord_string()
     {
-      Assert.AreEqual("Thirty", Numeronym.GetDeca("30"));
+      Assert.AreEqual("Thirty", Numeronym.GetDeca('3'));
     }
 
     [TestMethod]
@@ -32,11 +32,20 @@ namespace Words.Tests
     }
 
     [TestMethod]
-    public void MakeNumeronym_returnOnes_string()
+    public void MakeNumeronym_returnDeca_string()
     {
-      string input = "4";
-      Assert.AreEqual("Four", Numeronym.MakeNumeronym(input));
+      string input = "41";
+      Assert.AreEqual("FourtyOne", Numeronym.MakeNumeronym(input));
     }
+
+    // [TestMethod]
+    // public void MakeNumeronym_returnOnes_string()
+    // {
+    //   string input = "4";
+    //   Assert.AreEqual("Four", Numeronym.MakeNumeronym(input));
+    // }
+
+
 
   }
 }
