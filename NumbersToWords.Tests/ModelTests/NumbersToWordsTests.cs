@@ -21,30 +21,87 @@ namespace Words.Tests
     [TestMethod]
     public void GetDeca_returnsDecasAsWord_string()
     {
-      Assert.AreEqual("Thirty", Numeronym.GetDeca('3'));
+      Assert.AreEqual("Thirty", Numeronym.GetDeca("30"));
     }
 
     [TestMethod]
+    public void LastTwo_ReturnStringEleven_String()
+    {
+
+      Assert.AreEqual("Eleven", Numeronym.LastTwo("11"));
+    }
+    [TestMethod]
+    public void LastTwo_ReturnStringTwentyTwo_String()
+    {
+
+      Assert.AreEqual("Twenty Two", Numeronym.LastTwo("22"));
+    }
+    [TestMethod]
+    public void LastTwo_ReturnStringThirtyThree_String()
+    {
+
+      Assert.AreEqual("Thirty Three", Numeronym.LastTwo("33"));
+    }
+    public void LastTwo_ReturnStringNintyNine_String()
+    {
+
+      Assert.AreEqual("Ninty Nine", Numeronym.LastTwo("99"));
+    }
+
+    [TestMethod]
+    public void LastTwo_ReturnTwelve_String()
+    {
+      Assert.AreEqual("Twelve", Numeronym.LastTwo("12"));
+    }
+
+    [TestMethod]
+    public void LastTwo_ReturnOne_String()
+    {
+      Assert.AreEqual("One", Numeronym.LastTwo("01"));
+    }
+    [TestMethod]
     public void MakeNumeronym_returnTeen_string()
     {
-      string input = "14";
-      Assert.AreEqual("Fourteen", Numeronym.MakeNumeronym(input));
+      Assert.AreEqual("Fourteen", Numeronym.MakeNumeronym("14"));
     }
 
     [TestMethod]
     public void MakeNumeronym_returnDeca_string()
     {
       string input = "41";
-      Assert.AreEqual("FourtyOne", Numeronym.MakeNumeronym(input));
+      Assert.AreEqual("Forty One", Numeronym.MakeNumeronym(input));
     }
 
-    // [TestMethod]
-    // public void MakeNumeronym_returnOnes_string()
-    // {
-    //   string input = "4";
-    //   Assert.AreEqual("Four", Numeronym.MakeNumeronym(input));
-    // }
-
+    [TestMethod]
+    public void MakeNumeronym_returnOneHundred_string()
+    {
+      string input = "100";
+      Assert.AreEqual("One Hundred", Numeronym.MakeNumeronym(input));
+    }
+    [TestMethod]
+    public void MakeNumeronym_returnTwoHundredTwelve_string()
+    {
+      string input = "212";
+      Assert.AreEqual("Two HundredTwelve", Numeronym.MakeNumeronym(input));
+    }
+    [TestMethod]
+    public void MakeNumeronym_returnTwoHundred_string()
+    {
+      string input = "200";
+      Assert.AreEqual("Two Hundred", Numeronym.MakeNumeronym(input));
+    }
+    [TestMethod]
+    public void MakeNumeronym_returnOneThousand_string()
+    {
+      string input = "1000";
+      Assert.AreEqual("One Thousand", Numeronym.MakeNumeronym(input));
+    }
+    [TestMethod]
+    public void MakeNumeronym_returnTenThousand_string()
+    {
+      string input = "10000";
+      Assert.AreEqual("Ten Thousand", Numeronym.MakeNumeronym(input));
+    }
 
 
   }
